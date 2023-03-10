@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int isPlanidrome(int num)
+{
+    int reversed = 0;
+    int originalNumber = num;
+    while (num != 0)
+    {
+        reversed = reversed * 10 + num % 10;
+        num = num / 10;
+    }
+    printf("The reversed number is:%d\n", reversed);
+
+    if (originalNumber == reversed)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+int main()
+{
+    int number;
+    printf("Enter a number to check whether it is a palindrome or not.\n");
+    scanf("%d", &number);
+    if (isPlanidrome(number))
+    {
+        printf("This number ia a palindrome number.\n");
+    }
+    else
+    {
+        printf("This number is not a palindrome number.\n");
+    }
+
+    return 0;
+}
